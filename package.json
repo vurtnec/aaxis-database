@@ -1,0 +1,70 @@
+{
+  "name": "@aaxis/azure-database",
+  "version": "1.0.2",
+  "description": "The Azure Table Storage module for Nest framework (node.js)",
+  "author": {
+    "name": "Derek Hu",
+    "email": "derekhu@aaxiscommerce.com"
+  },
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nestjs/azure-database.git"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "precommit": "lint-staged",
+    "prettier": "prettier src/**/*.ts --write && git status",
+    "build": "rimraf dist && npm run build:lib",
+    "build:lib": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0"
+  },
+  "dependencies": {
+    "@azure/cosmos": "^3.4.2",
+    "@azure/ms-rest-js": "^2.0.4",
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "axios": "^0.19.2",
+    "azure-storage": "^2.10.3"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "7.0.13",
+    "@types/jest": "25.2.3",
+    "@types/node": "11.13.21",
+    "dotenv": "^8.1.0",
+    "husky": "4.2.5",
+    "jest": "26.0.1",
+    "lint-staged": "10.2.4",
+    "prettier": "2.0.5",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "supertest": "4.0.2",
+    "ts-jest": "26.0.0",
+    "tslint": "6.1.2",
+    "typescript": "3.9.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "files": [
+    "lib",
+    "dist"
+  ]
+}
