@@ -33,7 +33,7 @@
     "@azure/ms-rest-js": "^2.0.4",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "azure-storage": "^2.10.3"
   },
   "devDependencies": {
